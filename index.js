@@ -23,7 +23,7 @@ mongoose
 app.use(
   cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: 'https://shinhan-final.web.app/'
   })
 );
 app.use(cookieParser());
@@ -40,7 +40,9 @@ app.use('/v1/auth', authRoute);
 app.use('/v1/user', userRoute);
 app.use('/v1/shoes', shoesRoute);
 app.use('/upload', uploadRoute);
-
+app.get('/test', (req, res, next) => {
+  res.status(200).json({ success: 'Hello Server' });
+});
 app.get('/*', function (req, res) {
   res.sendFile(path.join('public', 'index.html'));
 });
