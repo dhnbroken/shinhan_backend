@@ -23,7 +23,7 @@ mongoose
 app.use(
   cors({
     credentials: true,
-    origin: 'https://shinhan-final.web.app/'
+    origin: 'https://shinhan-final.web.app'
   })
 );
 app.use(cookieParser());
